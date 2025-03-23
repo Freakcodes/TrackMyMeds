@@ -5,7 +5,7 @@ export const FormatDate = (timestamp) => {
 };
 
 export const formatDateForText = (date) => {
-  return moment(date).format("ll");
+  return moment(date).format("L");
 };
 
 export const formatTime = (timestamp) => {

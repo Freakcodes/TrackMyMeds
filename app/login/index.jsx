@@ -1,75 +1,71 @@
-import { View, Text,Image, TouchableOpacity,StyleSheet } from 'react-native'
-import React from 'react'
-import Colors from '../constants/Colors'
-import { useRouter } from 'expo-router'
-export default function LoginScreen() {
+import { View, Text, Image, StyleSheet, TouchableOpacity} from 'react-native';
+import React from 'react';
+import { useRouter } from 'expo-router';
+import Colors from '../../constant/Colors';
 
-    const router=useRouter();
-  return (
-    <View>
-      <View style={{
-        display:'flex',
-        alignItems:'center',
-        marginTop:30
-      }}>
-        <Image source={require('../../assets/images/login.png')}
-        style={{
-            width:210,
-            height:450,
-            borderRadius:23
-        }}
-        />
-      </View>
-      <View
-      style={{
-        padding:30,
-        backgroundColor:Colors.PRIMARY,
-        marginTop:10,
-        height:'100%'
+export default function LoginScreen() { 
+    const router = useRouter();
+    return (
+        <View>
+            <View style={{
+            display: 'flex',
+ 
+            alignItems: 'center',
+            marginTop: 100
+            }}>
+                <Image source={require('./../../assets/images/login.png')} 
+                    style={styles.image}
+                />
+            </View>
+            <View style={{
+                padding: 20,
+                backgroundColor: Colors.Primary,
+                height: '100%'
+            }}>
+                <Text style={{
+                    fontSize: 30,
+                    fontWeight: 'bold',
+                    color: 'white',
+                    textAlign: 'center'
+                }}>Stay on Track, Stay Healthy!</Text>
 
-      }}
-      >
-        <Text style={{
-            fontWeight:'bold',
-            fontSize:30,
-            color:'white',
-            textAlign:'center'
-            
-        }}>Stay on Track,Stay Healthy!</Text>
+                <Text style={{
+                    fontSize: 20,
+                    color: 'white',
+                    textAlign: 'center',
+                    marginTop: 20
+                }}>Track Your Meds, take control of your health. Stay consitent, Stay Confident!</Text>
 
-        <Text style={{
-            color:'white',
-            textAlign:'center',
-            marginTop:'20',
-            fontSize:17,
-            
-        }}>
-            Track your meds, Take control of your health!
-        </Text>
+                <TouchableOpacity style={styles.button}
+                    onPress={()=>router.push('login/signin')}
+                >
+                    <Text style={{
+                        textAlign: 'center',
+                        fontSize: 20,
+                        color: Colors.Primary
 
-        <TouchableOpacity style={styles?.button}
-        onPress={()=>router.push('login/SignIn')}
-        >
-            <Text style={
-                {
-                    textAlign:'center',
-                    fontSize:16,
-                    color:Colors.PRIMARY
-                }
-            }>
-                Continue
-            </Text>
-        </TouchableOpacity>
-      </View>
-    </View>
-  )
+                    }}>Get Started</Text>
+                </TouchableOpacity>
+                <Text style={{
+                    color: 'white',
+                    textAlign: 'center',
+                    marginTop: 6
+                }}>Note: By Clicking Get Started button, You Will agree to our terms and condition</Text>
+            </View>
+        </View>
+    );
 }
 
-const styles=StyleSheet.create({
+const styles = StyleSheet.create({
+    image: {
+        width: 300,
+        height: 450,
+        borderRadius: 15
+    },
     button:{
-        padding:15,
-        backgroundColor:'white',
-        borderRadius:99,
-        marginTop:20
+        backgroundColor: 'white',
+        padding: 10,
+        borderRadius: 99,
+        marginTop: 25
     }
-})
+});
