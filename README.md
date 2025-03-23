@@ -24,8 +24,8 @@ A React Native application built with Expo to help users track their medications
 
 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/Medicine-Tracker.git
-cd Medicine-Tracker
+git clone https://github.com/Freakcodes/TrackMyMeds.git
+cd TrackMyMeds
 ```
 
 2. Install dependencies
